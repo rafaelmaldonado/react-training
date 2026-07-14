@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>React Cheat Sheet</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<h1>React Cheat Sheet</h1>
+<p class="subtitle">The compressed essence. Grows one lesson at a time.</p>
+
+<h2>Components</h2>
+<p>A component is a JavaScript function that returns markup (JSX). Its name
+<strong>must start with a capital letter</strong> — that's how React tells your
+components apart from plain HTML tags.</p>
+<pre><code>function MyButton() {
+  return &lt;button&gt;Click me&lt;/button&gt;;
+}</code></pre>
+
+<h2>Nesting &amp; exporting</h2>
+<p>Components render other components. <code>export default</code> marks the
+main component of a file.</p>
+<pre><code>export default function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Welcome&lt;/h1&gt;
+      &lt;MyButton /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+
+<h2>JSX rules</h2>
+<ul>
+  <li>Return <strong>one</strong> root element. Wrap siblings in a
+      <code>&lt;div&gt;</code> or an empty Fragment <code>&lt;&gt;...&lt;/&gt;</code>.</li>
+  <li>Every tag must close: <code>&lt;br /&gt;</code>, <code>&lt;img /&gt;</code>.</li>
+  <li>Self-closing components: <code>&lt;MyButton /&gt;</code>.</li>
+</ul>
+
+<div class="lesson-meta">
+  Source of truth: <a href="https://react.dev/learn">react.dev/learn</a>.
+</div>
+</body>
+</html>

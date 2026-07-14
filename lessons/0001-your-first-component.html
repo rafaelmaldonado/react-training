@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 1 — Your First Component</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+
+<h1>Your First Component</h1>
+<p class="subtitle">Lesson 1 · The atom of every React app</p>
+
+<p>Every React app — including the ones you'll build on the job — is made of
+<strong>components</strong>. A component is just a JavaScript function that
+returns some markup. That's the whole idea. Master this and everything else in
+React is a variation on it.
+<a class="cite" href="https://react.dev/learn/your-first-component">[react.dev]</a></p>
+
+<h2>1. A component is a function that returns markup</h2>
+<pre><code>function Greeting() {
+  return &lt;h1&gt;Hello, React&lt;/h1&gt;;
+}</code></pre>
+
+<p>Two rules do most of the work here:</p>
+<ul>
+  <li><strong>Capital letter.</strong> <code>Greeting</code>, not
+      <code>greeting</code>. React uses the capital to tell your components
+      apart from real HTML tags like <code>&lt;h1&gt;</code>.</li>
+  <li><strong>It returns markup.</strong> That HTML-looking syntax is called
+      <strong>JSX</strong>. It's not HTML and it's not a string — it's a
+      JavaScript expression you're <code>return</code>ing.</li>
+</ul>
+
+<div class="callout">
+<strong>JS shore-up.</strong> That arrow-free <code>function Greeting() { return ... }</code>
+is a plain function declaration — same as any JS function, it just happens to
+return markup instead of a number. Nothing React-specific about the
+<code>function</code> keyword.
+</div>
+
+<h2>2. Components nest inside other components</h2>
+<p>You build a UI by putting components inside components, like Lego bricks. The
+top one is usually exported as the app's entry point.</p>
+<pre><code>function Greeting() {
+  return &lt;h1&gt;Hello, React&lt;/h1&gt;;
+}
+
+export default function App() {
+  return (
+    &lt;div&gt;
+      &lt;Greeting /&gt;
+      &lt;Greeting /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+<p>Notice a component is used like a self-closing tag: <code>&lt;Greeting /&gt;</code>.
+And <code>App</code> returns a single <code>&lt;div&gt;</code> wrapping both greetings —
+because of the next rule.</p>
+
+<h2>3. Return exactly one root element</h2>
+<p>A component can only return <em>one</em> top-level element. If you need
+siblings, wrap them — in a <code>&lt;div&gt;</code>, or in an empty
+<strong>Fragment</strong> <code>&lt;&gt;...&lt;/&gt;</code> when you don't want an
+extra div in the page.</p>
+<pre><code>return (
+  &lt;&gt;
+    &lt;h1&gt;Title&lt;/h1&gt;
+    &lt;p&gt;Body&lt;/p&gt;
+  &lt;/&gt;
+);</code></pre>
+
+<h2>Check yourself</h2>
+<p>Recall from memory — don't scroll up.</p>
+
+<div class="quiz" data-answer="1"
+     data-explain="React uses the capital letter to distinguish your components from HTML tags.">
+  <div class="q">Which name is a valid React component?</div>
+  <div class="options">
+    <button class="opt">function userCard()</button>
+    <button class="opt">function UserCard()</button>
+  </div>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz" data-answer="0"
+     data-explain="A component must return a single root; a Fragment groups siblings with no extra div.">
+  <div class="q">Two sibling tags with no wrapper — what fixes it fastest?</div>
+  <div class="options">
+    <button class="opt">Wrap both inside a Fragment tag</button>
+    <button class="opt">Return the two tags in array</button>
+  </div>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz" data-answer="1"
+     data-explain="Inside JSX you render a component with a self-closing tag, capitalized.">
+  <div class="q">How do you render a Greeting component inside App?</div>
+  <div class="options">
+    <button class="opt">Call it like greeting() here</button>
+    <button class="opt">Write the tag as &lt;Greeting /&gt;</button>
+  </div>
+  <div class="feedback"></div>
+</div>
+
+<h2>Your win</h2>
+<p>You can now read any React file and pick out its components, know why they're
+capitalized, and know why they wrap their output. That's the vocabulary the rest
+of the course is built on.</p>
+
+<div class="callout">
+<strong>Read next (primary source):</strong>
+<a href="https://react.dev/learn/your-first-component">react.dev — Your First Component</a>.
+It's short and echoes exactly what's here — reinforcement by a second voice.
+</div>
+
+<div class="callout">
+<strong>I'm your teacher.</strong> Anything unclear — why a Fragment exists, what
+JSX compiles to, how this maps to a real job — just ask me. Follow-up questions
+are the point, not an interruption.
+</div>
+
+<div class="lesson-meta">
+  Reference: <a href="../reference/react-cheatsheet.html">React Cheat Sheet</a> ·
+  Mission: get job-ready with React ·
+  Next up: <em>props</em> — passing data into components.
+</div>
+
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
