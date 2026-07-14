@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aprende React — Índice del curso</title>
+<link rel="stylesheet" href="assets/lesson.css">
+<style>
+  /* Solo lo que la hoja compartida no cubre: la grilla de tarjetas. */
+  .mission {
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 1rem 1.3rem;
+    margin: 1.5rem 0 2.5rem;
+    font-size: .95rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .card {
+    display: block;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .12s, transform .12s;
+  }
+  .card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.08); transform: translateY(-2px); }
+  .card .num { font-size: .78rem; color: var(--muted); letter-spacing: .05em; }
+  .card .title { font-size: 1.1rem; font-weight: 600; margin: .15rem 0 .35rem; color: var(--accent); }
+  .card .desc { font-size: .88rem; color: var(--muted); line-height: 1.4; }
+  .card.upcoming { border-left-color: var(--rule); opacity: .6; cursor: default; }
+  .card.upcoming .title { color: var(--muted); }
+  .refs { display: flex; flex-wrap: wrap; gap: .8rem; }
+  .refs a { font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<h1>Aprende React</h1>
+<p class="subtitle">Índice del curso · rumbo a un puesto de desarrollador React</p>
+
+<div class="mission">
+  <strong>Misión:</strong> aprender React lo suficientemente bien como para
+  conseguir y mantener un trabajo. Cada lección se apoya en la anterior y añade
+  una habilidad concreta que los empleadores esperan.
+</div>
+
+<h2>Lecciones</h2>
+<ul class="grid">
+  <li>
+    <a class="card" href="lessons/0001-your-first-component.html">
+      <div class="num">LECCIÓN 01</div>
+      <div class="title">Tu primer componente</div>
+      <div class="desc">El átomo de React: funciones que devuelven JSX,
+        anidamiento y la regla de un solo elemento raíz.</div>
+    </a>
+  </li>
+  <li>
+    <div class="card upcoming">
+      <div class="num">LECCIÓN 02 · próximamente</div>
+      <div class="title">Props</div>
+      <div class="desc">Pasar datos a los componentes. Aquí aparecerá el
+        destructuring de JavaScript.</div>
+    </div>
+  </li>
+</ul>
+
+<h2>Referencia</h2>
+<div class="refs">
+  <a href="reference/react-cheatsheet.html">📄 Chuleta de React</a>
+</div>
+
+<h2>Recursos</h2>
+<div class="refs">
+  <a href="https://react.dev/learn">react.dev — Learn (fuente principal)</a>
+  <a href="https://www.reddit.com/r/reactjs/">r/reactjs (comunidad)</a>
+</div>
+
+<div class="lesson-meta">
+  ¿Algo poco claro? Soy tu profesor — pregúntame cuando quieras.
+  Di «siguiente» para generar la próxima lección.
+</div>
+
+</body>
+</html>
